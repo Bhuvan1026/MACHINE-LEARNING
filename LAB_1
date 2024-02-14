@@ -1,0 +1,22 @@
+import pandas as pd
+data=pd.read_csv("enjoy_sport.csv")
+data
+
+h=['pi','pi','pi','pi','pi','pi']
+h=data.loc[0].tolist()
+
+
+for i in range(len(data)):
+    if(data.loc[i]['enjoysport']=='yes'):
+        for j in range(len(h)):
+            
+            if(data.loc[i][j]!=h[j]):
+                h[j]='?'
+               
+            else:
+                
+                h[j]=data.loc[i][j]
+    else:
+        pass
+    
+    print(h[:-1])
